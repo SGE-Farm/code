@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=%_hfvd*mbm+!wbzp5qg%)*@q_fv*$#wde45zw0@!w6e!m#r3v'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,9 +75,9 @@ WSGI_APPLICATION = 'sgfarm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'sgfarm'),
-        'USER': os.environ.get('POSTGRES_USER', 'admin'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'admin'),
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
         'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
         'PORT': os.environ.get('POSTGRES_PORT', '5433'),
     }
