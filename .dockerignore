@@ -1,0 +1,8 @@
+*
+!requirements.txt
+!trabalhoFinal/
+!trabalhoFinal/**
+**/.env*
+**/.venv
+**/__pycache__
+**/db.sqlite3*
